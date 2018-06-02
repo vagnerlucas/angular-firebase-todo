@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(92.1%, 92.1%, 92%);
+}
+
+.app-title {
+    h1 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 92px;
+        text-align: center;
+    }
+}

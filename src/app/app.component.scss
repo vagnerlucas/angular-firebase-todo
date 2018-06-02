@@ -1,0 +1,97 @@
+.events {
+  .task-icon {
+    width: 32px;
+    margin: 0 0 10px 0;
+  }
+  .events-body {
+    font-size: 18px;
+    p {
+        margin: 7px 48px 15px 5px;
+        line-height: 125%;
+        font-size: 16px;
+    }
+
+    p.task-done {
+        text-decoration: line-through;
+        color: #ccc;
+    }
+  }
+  .task-action {
+    position: absolute;
+    right: 2px;
+    top: 6px;
+    width: 30px;
+    .btn-done {
+      float: left;
+    }
+    .btn-rounded {
+      border-radius: 50px;
+      width: 24px;
+      height: 24px;
+      font-size: 15px;
+    }
+    .btn-remove {
+      border: 1px solid red;
+      background-color: white;
+      color: red;
+      outline: none;
+      opacity: 0;
+      transition: all .35s;
+    }
+    .btn-remove:hover {
+      background-color: red;
+      color: #fff;
+      transition: all .35s;
+    }
+    
+  }
+}
+
+.events:hover .task-action .btn-remove {
+  opacity: 1;
+  transition: all .35s;
+}
+
+.campo {
+    float: left;
+}
+
+.campo input[type=checkbox] {
+  display: none;
+  /* Esconde os inputs */
+}
+
+.campo input[type=checkbox] {
+  display: none;
+  /* Esconde os inputs */
+}
+
+.campo label {
+  cursor: pointer;
+}
+
+.campo input[type="checkbox"]+label:before {
+  border: 1px solid #83d89d;
+  content: "\00a0";
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 32px;
+  margin: 0 .25em 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 32px;
+  border-radius: 50%;
+  color:  #83d89d;
+}
+
+.campo input[type="checkbox"]:checked+label:before {
+  background:  #83d89d;
+  color: #FFF;
+  content: "\2713";
+  text-align: center;
+  padding: 8px;
+}
+
+.campo input[type="checkbox"]:checked+label:after {
+  font-weight: bold;
+}
