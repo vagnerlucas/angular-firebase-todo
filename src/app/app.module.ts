@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { OrderByDatePipe } from './pipes/orderby-date.pipe';
 import { FilterTaskPipe } from './pipes/filter-task.pipe';
 
+import { AuthService } from './services/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,7 @@ import { FilterTaskPipe } from './pipes/filter-task.pipe';
     AngularFireStorageModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
