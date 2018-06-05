@@ -1,6 +1,20 @@
 <div class="container">
 
-  <input [(ngModel)]="desc" type="text" placeholder="add or search for a task..." class="main-search" (keyup.enter)="addTask(desc);desc=''" />
+  <button *ngIf="!isLoggedIn()" type="button" class="btn btn-block" (click)="signInWithGoogle()">
+    <i class="fa fa-google" aria-hidden="true"></i>
+    Login with Google
+  </button>
+
+  <img style="with:50px;height:50px" *ngIf="isLoggedIn()" src={{loggedUserPicture}} />
+  <label *ngIf="isLoggedIn()">{{ loggedUserName }}</label>
+
+  <button *ngIf="isLoggedIn()" type="button" class="btn btn-block" (click)="signOut()">
+    <i class="fa fa-google" aria-hidden="true"></i>
+    Logout
+  </button>
+
+  <input [(ngModel)]="desc" type="text" placeholder="add or search for a task..." class="main-search" (keyup.enter)="addTask(desc);desc=''"
+  />
 
   <div class="row">
     <div class="col-md-12">
@@ -12,9 +26,9 @@
             <div class="events">
               <div class="pull-left">
                 <div class="campo">
-                    <input type="checkbox" [checked]="task.done" name="campo-checkbox" id="{{task.id}}" (click)="markDoneOrUndone(task)" />  
-                    <label for="{{task.id}}"></label>
-                  </div>
+                  <input type="checkbox" [checked]="task.done" name="campo-checkbox" id="{{task.id}}" (click)="markDoneOrUndone(task)" />
+                  <label for="{{task.id}}"></label>
+                </div>
               </div>
               <div class="events-body">
                 <div class="description">
@@ -22,7 +36,7 @@
                 </div>
                 <div class="task-action">
                   <div class="remove">
-                    <button class="btn-rounded btn-remove" (click)="removeTask(task)" >X</button>
+                    <button class="btn-rounded btn-remove" (click)="removeTask(task)">X</button>
                   </div>
                 </div>
               </div>
